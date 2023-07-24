@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class BuiletLogic : MonoBehaviour
 {
-    public float speed = 3;
-
+    public float speed = 5;
     public float duration = 5;
 
     // Start is called before the first frame update
