@@ -1,22 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateBulletLogic : MonoBehaviour
 {
+    public float interval = 0.2f;
     public GameObject prefab;
-
-    private List<GameObject> _bulletList = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            GameObject bullet = Instantiate(prefab, transform);
-            _bulletList.Add(bullet);
-        }
-
-        Invoke(nameof(destroyBullets), 3);
+        InvokeRepeating(nameof(CreateBullet), 0, interval);
     }
 
     // Update is called once per frame
@@ -24,8 +16,8 @@ public class CreateBulletLogic : MonoBehaviour
     {
     }
 
-    private void destroyBullets()
+    private void CreateBullet()
     {
-        _bulletList.ForEach(Destroy);
+        Instantiate(prefab, transform);
     }
 }

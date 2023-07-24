@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b00c1fb63a0347568103df44af7ae9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 0.3
   prefab: {fileID: 3874240678385640954, guid: 7f085d6f956fe4d9eaeb699d684f4622, type: 3}
 --- !u!4 &993297872
 Transform:
