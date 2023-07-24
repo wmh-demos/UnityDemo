@@ -23,4 +23,13 @@ public class BuiletLogic : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("OnCollisionEnter: " + other.gameObject.name);
+        if (other.gameObject.name.StartsWith("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

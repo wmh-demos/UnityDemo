@@ -15,6 +15,10 @@ public class EnemyLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 关闭重力
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+
         InvokeRepeating(nameof(updateXOrder), 0, 0.5f);
     }
 
@@ -29,6 +33,15 @@ public class EnemyLogic : MonoBehaviour
         }
 
         updateZOrder();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("OnCollisionEnter: " + other.gameObject.name);
+        if (other.gameObject.name.StartsWith("Bullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void updateZOrder()
